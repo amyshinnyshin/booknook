@@ -1,0 +1,101 @@
+/* color */
+:root {
+    /* Grayscale */
+    --boulder-50: #F6F6F6;
+    --boulder-100: #E7E7E7;
+    --boulder-200: #D1D1D1;
+    --boulder-300: #B0B0B0;
+    --boulder-400: #888888;
+    --boulder-500: #787878;
+    --boulder-600: #5D5D5D;
+    --boulder-700: #4F4F4F;
+    --boulder-800: #454545;
+    --boulder-900: #3D3D3D;
+    --boulder-950: #262626;
+
+    /* Primary Button */
+    --lucky-point-50: #F4F7FE;
+    --lucky-point-100: #EAEDFD;
+    --lucky-point-200: #D8DFFC;
+    --lucky-point-300: #B9C3F9;
+    --lucky-point-400: #919BF4;
+    --lucky-point-500: #646BEE;
+    --lucky-point-600: #4543E4;
+    --lucky-point-700: #3731D0;
+    --lucky-point-800: #2D28AF;
+    --lucky-point-900: #27238F;
+    --lucky-point-950: #161669;
+
+    /* Secondary Button, BG-color */
+    --quarter-spanish-white-50: #F9F7F3;
+    --quarter-spanish-white-100: #EEE8DA;
+    --quarter-spanish-white-200: #E4D9C4;
+    --quarter-spanish-white-300: #D2C09F;
+    --quarter-spanish-white-400: #BFA178;
+    --quarter-spanish-white-500: #B28B5D;
+    --quarter-spanish-white-600: #A47952;
+    --quarter-spanish-white-700: #896245;
+    --quarter-spanish-white-800: #6F4F3D;
+    --quarter-spanish-white-900: #5B4233;
+    --quarter-spanish-white-950: #30221A;
+
+
+
+    --brand-font: 'Playfair Display', serif;
+    --primary-font: 'Manrope', sans-serif;
+
+    --font-weight-regular: 500;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-style: normal;
+    margin: 0px;
+}
+
+h1 {
+    font-family: var(--brand-font);
+    font-size: 40px;
+    line-height: 48px;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 40px;
+}
+
+h3 {
+    font-size: 28px;
+    line-height: 32px;
+}
+
+h4 {
+    font-size: 24px;
+    line-height: 32px;
+}
+
+h5 {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+h6 {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: var(--font-weight-regular);
+}
+
+a {
+    text-decoration: none;
+}
+
+.icon-default {
+    width: 24px;
+    height: 24px;
+}

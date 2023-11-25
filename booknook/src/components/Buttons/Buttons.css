@@ -1,0 +1,7 @@
+@import url('../../App.css');
+
+button.icon-button {
+    padding: 0px;
+    border: none;
+    background: none;
+}
