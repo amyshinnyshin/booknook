@@ -1,7 +1,36 @@
 @import url('../../App.css');
+button {
+    cursor: pointer;
+}
 
-button.icon-button {
+
+.primary-button {
+    display: flex;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-weight: var(--font-weight-extrabold);
+    color: white;
+    background: var(--lucky-point-900);
+    border: none;
+    border-radius: 32px;
+}
+
+.primary-button:hover {
+    background: var(--lucky-point-950);
+}
+
+.icon-button {
     padding: 0px;
     border: none;
     background: none;
 }
+
+.icon-button:hover {
+    background: var(--quarter-spanish-white-200);
+    border-radius: 4px;
+}
+
+
+

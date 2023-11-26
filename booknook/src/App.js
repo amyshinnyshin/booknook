@@ -8,6 +8,8 @@ import LeftSidebar from './components/LeftSidebar/LeftSidebar';
 import HomePage from './components/HomePage';
 import BrowsePage from './components/BrowsePage';
 import FavoritesPage from './components/FavoritesPage';
+import BookDetailsPage from './components/BookDetailsPage';
+
 
 
 function App() {
@@ -18,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/browse" element={<BrowsePage />} />
+          <Route path="/browse/book/:id" element={<BookDetailsPage />}/>
           <Route path="/favorites" element={<FavoritesPage />} />
         </Routes>
       </div>

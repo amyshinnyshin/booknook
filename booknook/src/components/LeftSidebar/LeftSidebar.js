@@ -6,6 +6,10 @@ import { TertiaryIconButton } from '../Buttons/Buttons';
 import NavItem from './Items/NavItem';
 
 
+const handleButtonClick = () => {
+    
+};
+
 
 const LeftSidebar = () => {
     return (
@@ -20,15 +24,18 @@ const LeftSidebar = () => {
                 <div className='ls-nav-and-rl-container'>
 
                     <div className="ls-nav-items-container">
-                        <NavItem to="/" icon="/assets/icons/house-chimney.png" text="Home" />
-                        <NavItem to="/browse" icon="/assets/icons/books.png" text="Browse" />
-                        <NavItem to="/favorites" icon="/assets/icons/bookmark.png" text="Favorites" />
+                        <NavItem to="/" icon="/assets/icons/house-chimney.png" text="Home" expectedKeyword="home"/>
+                        <NavItem to="/browse" icon="/assets/icons/books.png" text="Browse" expectedKeyword="browse"/>
+                        <NavItem to="/favorites" icon="/assets/icons/bookmark.png" text="Favorites" expectedKeyword="favorites"/>
                     </div>
                     
                     <div className="reading-list-container">
                         <div className="rl-section-header">
                             <p className='section-name'>READING LIST</p>
-                            <TertiaryIconButton />
+                            <TertiaryIconButton
+                            icon="/assets/icons/plus.png"
+                            onClick={ handleButtonClick }
+                        />
                         </div>
 
                         <div className='rl-item-container'> 

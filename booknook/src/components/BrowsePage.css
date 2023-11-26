@@ -1,6 +1,8 @@
 @import url('../App.css');
 .browse-page-container {
     display: flex;
+    flex-direction: column;
+    gap: 40px;
     width: calc(100vw - 320px);
     padding: 24px 32px 64px 32px
 }
@@ -11,3 +13,10 @@
     align-self: stretch;
     flex: 1;
 }
+
+.book-tiles-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* Each column has equal width */
+    gap: 24px;
+}
+

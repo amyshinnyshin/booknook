@@ -1,48 +1,80 @@
-import React from 'react'; 
+// Buttons.js
+
+import React from 'react';
+import PropTypes from 'prop-types';
 import './Buttons.css';
 
-const PrimaryButton = () => {
+const PrimaryButton = ({ children }) => {
   return (
     <button className="primary-button">
-      {/* Button content goes here */}
+      {children}
     </button>
   );
 };
 
-const PrimaryButtonWithIcon = () => {
-    return (
-      <button className="primary-button">
-        {/* Button content goes here */}
-      </button>
-    );
-  };
-
-const SecondaryButton = () => {
-    return (
-      <button className="primary-button">
-        {/* Button content goes here */}
-      </button>
-    );
-  };
-
-const SecondaryButtonWithIcon = () => {
-    return (
-      <button className="primary-button">
-        {/* Button content goes here */}
-      </button>
-    );
+PrimaryButton.propTypes = {
+  children: PropTypes.node, // Content inside the button
 };
 
-const TertiaryIconButton = () => {
-    return (
-      <button className="icon-button">
-        <img className="icon-default" src="/assets/icons/plus.png" alt="add"></img>
-      </button>
-    );
+const PrimaryButtonWithIcon = ({ text, icon, onClick }) => {
+  return (
+    <button className="primary-button" onClick={onClick}>
+      {icon && <img className="icon-default" src={icon} alt="Icon" />}
+      {text}
+    </button>
+  );
 };
 
+PrimaryButtonWithIcon.propTypes = {
+  text: PropTypes.string.isRequired, // Text inside the button
+  icon: PropTypes.string, // URL of the icon image
+  onClick: PropTypes.func, // Click handler function
+};
 
+const SecondaryButton = ({ children }) => {
+  return (
+    <button className="secondary-button">
+      {children}
+    </button>
+  );
+};
 
+SecondaryButton.propTypes = {
+  children: PropTypes.node, // Content inside the button
+};
 
-export { PrimaryButton, PrimaryButtonWithIcon, SecondaryButton, SecondaryButtonWithIcon, TertiaryIconButton}
+const SecondaryButtonWithIcon = ({ text, icon, onClick }) => {
+  return (
+    <button className="secondary-button" onClick={onClick}>
+      {icon && <img className="icon-default" src={icon} alt="Icon" />}
+      {text}
+    </button>
+  );
+};
 
+SecondaryButtonWithIcon.propTypes = {
+  text: PropTypes.string.isRequired, // Text inside the button
+  icon: PropTypes.string, // URL of the icon image
+  onClick: PropTypes.func, // Click handler function
+};
+
+const TertiaryIconButton = ({ icon, onClick }) => {
+  return (
+    <button className="icon-button" onClick={onClick}>
+      {icon && <img className="icon-default" src={icon} alt="Icon" />}
+    </button>
+  );
+};
+
+TertiaryIconButton.propTypes = {
+  icon: PropTypes.string,
+  onClick: PropTypes.func, // Click handler function
+};
+
+export {
+  PrimaryButton,
+  PrimaryButtonWithIcon,
+  SecondaryButton,
+  SecondaryButtonWithIcon,
+  TertiaryIconButton
+};

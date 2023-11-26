@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
 import './NavItem.css';
 
-const NavItem = ({ to, icon, text, onClick }) => {
+const NavItem = ({ to, icon, text, expectedKeyword, onClick }) => {
   const [isActive, setIsActive] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
-    setIsActive(location.pathname === to);
-  }, [location.pathname, to]);
+    setIsActive(location.pathname.includes(expectedKeyword));
+  }, [location.pathname, expectedKeyword]);
 
   const handleClick = () => {
     if (onClick) {
