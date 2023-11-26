@@ -48,7 +48,7 @@ h4.logo-header{
 
 
 /* -----------------------–––––––––– Nav Item Container */
-.ls-nav-item-container {
+.ls-nav-items-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;

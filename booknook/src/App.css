@@ -56,6 +56,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-family: var(--brand-font);
+    font-weight: var(--font-weight-bold);
     font-size: 40px;
     line-height: 48px;
 }
@@ -80,7 +81,7 @@ h5 {
     line-height: 24px;
 }
 
-h6 {
+h6, input {
     font-size: 16px;
     line-height: 24px;
 }
@@ -91,6 +92,8 @@ p {
     font-weight: var(--font-weight-regular);
 }
 
+
+
 a {
     text-decoration: none;
 }
@@ -98,4 +101,12 @@ a {
 .icon-default {
     width: 24px;
     height: 24px;
+}
+
+.main-page-content-container{
+    position: fixed;
+    display: flex;
+    width: calc(100vw - 320px);
+    left: 320px;
+
 }

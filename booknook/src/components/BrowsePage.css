@@ -1,0 +1,13 @@
+@import url('../App.css');
+.browse-page-container {
+    display: flex;
+    width: calc(100vw - 320px);
+    padding: 24px 32px 64px 32px
+}
+.browse-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    flex: 1;
+}

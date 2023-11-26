@@ -1,0 +1,29 @@
+@import url('../../App.css');
+.search-input-container {
+    display: flex;
+    width: 288px;
+    padding: 8px 16px;
+    align-items: center;
+    border-radius: 32px;
+    outline: 1px solid var(--boulder-600);
+}
+
+.search-input-group{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1 0 0;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background: none;
+    padding: 0px;
+    font-family: 'Manrope';
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: var(--font-weight-regular);
+}
+

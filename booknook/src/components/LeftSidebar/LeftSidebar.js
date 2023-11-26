@@ -19,10 +19,10 @@ const LeftSidebar = () => {
 
                 <div className='ls-nav-and-rl-container'>
 
-                    <div className="ls-nav-item-container">
-                        <NavItem icon="/assets/icons/house-chimney.png" text="Home" />
-                        <NavItem icon="/assets/icons/books.png" text="Browse" />
-                        <NavItem icon="/assets/icons/bookmark.png" text="Favorites" />
+                    <div className="ls-nav-items-container">
+                        <NavItem to="/" icon="/assets/icons/house-chimney.png" text="Home" />
+                        <NavItem to="/browse" icon="/assets/icons/books.png" text="Browse" />
+                        <NavItem to="/favorites" icon="/assets/icons/bookmark.png" text="Favorites" />
                     </div>
                     
                     <div className="reading-list-container">

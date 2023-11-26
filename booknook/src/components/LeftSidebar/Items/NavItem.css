@@ -1,11 +1,27 @@
 @import url('../../../App.css');
 
-a.ls-nav-item-container {
+.ls-nav-item-container {
     display: flex;
     padding: 12px;
     align-items: flex-start;
     align-self: stretch;
     border-radius: 8px;
+}
+
+
+.ls-nav-item-container:hover {
+    background-color: var(--quarter-spanish-white-200);
+
+}
+
+.ls-nav-item-container.active {
+    background-color: var(--quarter-spanish-white-300);
+
+}
+
+.ls-nav-item-container.active h6.nav-text {
+    font-weight: var(--font-weight-extrabold);
+
 }
 
 .ls-nav-item {
@@ -20,7 +36,4 @@ h6.nav-text{
 }
 
 
-a.ls-nav-item-container:hover {
-    background-color: var(--quarter-spanish-white-200);
 
-}
