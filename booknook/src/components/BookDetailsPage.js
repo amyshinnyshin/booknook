@@ -1,59 +1,95 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import Breadcrumb from './Breadcrumbs/Breadcrumb';
-
-
-import './BookDetailsPage.css';
 import { PrimaryButtonWithIcon } from './Buttons/Buttons';
 
-
-const handleButtonClick = () => {
-    
-};
-
+import './BookDetailsPage.css';
 
 const BookDetailsPage = () => {
-    return (
-        <div className='book-detail-page-container'>
-            <Breadcrumb/ >
+  const { id } = useParams();
+  const [bookDetails, setBookDetails] = useState({});
+  const [authorName, setAuthorName] = useState('Unknown Author');
+    
 
-            <div className='bd-book-details'>
-                <div className='bd-top-section'>
-                    <div className='book-image'>
 
-                    </div>
-                    <div className='bd-right-section'>
-                        <div className='bd-header-group'>
-                            <p className='bd-genre'>NON-FICTION</p>
-                            <h1 className="bd-book-name">Book Name</h1>
-                            <h4 className='bd-author'>Author Name</h4>
-                        </div>
-                        
-                        <PrimaryButtonWithIcon
-                            text="Add to Reading List"
-                            icon="/assets/icons/plus-white.png"
-                            onClick={ handleButtonClick }
-                        />
-                    </div>
+  useEffect(() => {
+    const fetchBookDetails = async () => {
+      try {
+        const response = await fetch(`https://openlibrary.org/works/${id}.json`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch book details');
+        }
+        const data = await response.json();
+        setBookDetails(data);
 
-                </div>
-                <div>
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-                    </p>
-                </div>
 
-                <hr className="line-divider"></hr>
+        if (data.authors?.length) {
+          const authorKey = data.authors[0]?.author?.key;
 
-                <div>
-                    <h4 className='page-ection-header'>More Books from this Author</h4>
-                <div>
+          if (authorKey) {
+            const authorResponse = await fetch(`https://openlibrary.org${authorKey}.json`);
+            const authorData = await authorResponse.json();
 
-                </div>
-                </div>
+            const authorFullName = authorData?.name;
+            if (authorFullName) {
+              setAuthorName(authorFullName);
+            }
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching book details:', error);
+
+      } 
+    };
+
+    fetchBookDetails();
+  }, [id]);
+
+  const handleButtonClick = () => {
+    console.log('Book added to reading list');
+  };
+
+  return (
+    <div className='book-detail-page-container'>
+      <Breadcrumb 
+        previousPage={'Browse'}
+        currentPage={bookDetails.title}
+      />
+
+      <div className='bd-book-details'>
+        <div className='bd-top-section'>
+          <div className='book-image'>
+            <img className='book-image' src={`https://covers.openlibrary.org/b/id/${bookDetails.covers?.[0]}-L.jpg`} alt='Book Cover' />
+          </div>
+          <div className='bd-right-section'>
+            <div className='bd-header-group'>
+              <p className='bd-genre'>NON-FICTION</p>
+              <h1 className="bd-book-name">{bookDetails.title}</h1>
+              <h4 className='bd-author'>{authorName}</h4>
             </div>
-
             
+            <PrimaryButtonWithIcon
+              text="Add to Reading List"
+              icon="/assets/icons/plus-white.png"
+              onClick={handleButtonClick}
+            />
+          </div>
         </div>
+        <div>
+            <p>{bookDetails && bookDetails.description
+            ? typeof bookDetails.description === 'object'
+              ? bookDetails.description.value 
+              : bookDetails.description
+            : 'No description available'}</p>
+        </div>
+
+        <hr className="line-divider"></hr>
+        <div>
+          <h4 className='page-section-header'>More Books from {authorName}</h4>
+          
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -115,3 +115,24 @@ a {
     left: 320px;
 
 }
+
+
+/* transitions */
+
+.main-page-content-container-enter {
+    opacity: 0;
+}
+  
+.main-page-content-container-active {
+    opacity: 1;
+    transition: opacity 500ms linear;
+}
+  
+.main-page-content-container-exit {
+    opacity: 1;
+}
+  
+.main-page-content-container-active {
+    opacity: 0;
+    transition: opacity 500ms linear;
+}

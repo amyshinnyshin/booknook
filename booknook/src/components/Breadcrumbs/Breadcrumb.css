@@ -16,7 +16,8 @@
 
 .bc-item {
     line-height: 24px;
-    color: var(--boulder-950)
+    color: var(--boulder-950);
+    cursor: pointer;
 }
 
 .currentPage {

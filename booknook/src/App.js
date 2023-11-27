@@ -20,7 +20,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/browse" element={<BrowsePage />} />
-          <Route path="/browse/book/:id" element={<BookDetailsPage />}/>
+
+          <Route path="/browse/books/:id" element={<BookDetailsPage />} />
+
           <Route path="/favorites" element={<FavoritesPage />} />
         </Routes>
       </div>

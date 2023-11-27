@@ -6,13 +6,11 @@ import BookTile from './BookTiles/BookTile';
 import './BrowsePage.css';
 
 const BrowsePage = () => {
-  const [query, setQuery] = useState('Harry Potter');
+  const [query, setQuery] = useState('Hello');
   const [bookData, setBookData] = useState([]);
 
-  const generateBookLink = (bookId, source) => `/${source}/book/${bookId}`;
-
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchBooks = async () => {
       try {
         const response = await fetch(`https://openlibrary.org/search.json?q=${query}`);
         const data = await response.json();
@@ -22,7 +20,7 @@ const BrowsePage = () => {
       }
     };
 
-    fetchData();
+    fetchBooks();
   }, [query]);
 
   useEffect(() => {
@@ -40,6 +38,12 @@ const BrowsePage = () => {
     }
   };
 
+  const extractBookId = (key) => {
+    const parts = key.split('/');
+    return parts[parts.length - 1];
+  };
+  
+
   return (
     <div className='browse-page-container'>
       <div className='browse-header-container'>
@@ -51,7 +55,7 @@ const BrowsePage = () => {
       <div className='book-tiles-container'>
         {bookData.slice(0, 24).map((book) => (
           <Link
-            to={generateBookLink(book.key, 'browse')}
+            to={`/browse/books/${extractBookId(book.key)}`}
             key={book.key}
             onClick={() => fetchBookDetails(book.key)}
           >
@@ -72,3 +76,4 @@ const BrowsePage = () => {
 };
 
 export default BrowsePage;
+
