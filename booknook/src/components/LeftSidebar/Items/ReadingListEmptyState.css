@@ -1,0 +1,28 @@
+.rl-emptystate {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+    padding: 16px 16px 24px 16px;
+    border-radius: 8px;
+    background: #F3EFE6;
+}
+
+.small-section-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    align-self: stretch;
+}
+
+h6.card-header {
+    align-self: stretch;
+    font-weight: var(--font-weight-extrabold);
+}
+
+p.extra-small {
+    font-size: 14px;
+    line-height: 20px;
+}

@@ -1,6 +1,8 @@
 @import url('../../App.css');
 button {
     cursor: pointer;
+    font-size: 14px;
+    font-family: 'Manrope', sans-serif;
 }
 
 
@@ -15,11 +17,34 @@ button {
     background: var(--lucky-point-900);
     border: none;
     border-radius: 32px;
+    height: 48px;
 }
 
 .primary-button:hover {
     background: var(--lucky-point-950);
 }
+
+
+.secondary-button {
+    display: flex;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-weight: var(--font-weight-extrabold);
+    border: none;
+    border-radius: 32px;
+    border: 1px solid var(--boulder-950);
+    background: none;
+    height: 48px;
+}
+
+.secondary-button:hover {
+    background: var(--quarter-spanish-white-100);
+    border: 2px solid var(--boulder-950);
+}
+
+
 
 .icon-button {
     padding: 0px;
@@ -27,10 +52,7 @@ button {
     background: none;
 }
 
-.icon-button:hover {
-    background: var(--quarter-spanish-white-200);
-    border-radius: 4px;
-}
+
 
 
 

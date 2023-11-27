@@ -45,7 +45,7 @@ const BookDetailsPage = () => {
                 <hr className="line-divider"></hr>
 
                 <div>
-                    <h4 className='bd-section-header'>More Books from this Author</h4>
+                    <h4 className='page-ection-header'>More Books from this Author</h4>
                 <div>
 
                 </div>

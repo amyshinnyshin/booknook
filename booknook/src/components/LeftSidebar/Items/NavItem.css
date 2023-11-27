@@ -10,12 +10,12 @@
 
 
 .ls-nav-item-container:hover {
-    background-color: var(--quarter-spanish-white-200);
+    background-color: var(--quarter-spanish-white-100);
 
 }
 
 .ls-nav-item-container.active {
-    background-color: var(--quarter-spanish-white-300);
+    background-color: var(--quarter-spanish-white-200);
 
 }
 

@@ -1,0 +1,30 @@
+@import url('../App.css');
+
+.rl-es-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+    gap: 24px;
+    padding: 24px 24px 40px 24px;
+    border-radius: 16px;
+    background: #F3EFE6;
+}
+
+
+.rl-es-page-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px
+}
+
+
+.rl-empty-state-image {
+    width: 160px;
+    height: 160px;
+}
+
+h5.es-header {
+    font-weight: var(--font-weight-extrabold);
+}

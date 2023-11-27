@@ -103,6 +103,11 @@ a {
     height: 24px;
 }
 
+.icon-default-32px {
+    width: 32px;
+    height: 32px;
+}
+
 .main-page-content-container{
     position: fixed;
     display: flex;

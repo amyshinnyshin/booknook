@@ -1,0 +1,39 @@
+@import url('../App.css');
+
+.homepage-container {
+    display: flex;
+    flex-direction: column;
+    width: calc(100vw - 320px);
+    padding: 24px 32px 64px 32px
+}
+
+
+.homepage-header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+    padding-bottom: 40px;
+
+}
+
+h5.normal-weight {
+    font-weight: var(--font-weight-regular);
+}
+
+.homepage-main-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    align-self: stretch;
+}
+
+.reading-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}

@@ -4,6 +4,7 @@ import './LeftSidebar.css';
 
 import { TertiaryIconButton } from '../Buttons/Buttons';
 import NavItem from './Items/NavItem';
+import { ReadingListEmptyState } from './Items/ReadingListEmptyState';
 
 
 const handleButtonClick = () => {
@@ -39,7 +40,7 @@ const LeftSidebar = () => {
                         </div>
 
                         <div className='rl-item-container'> 
-
+                            <ReadingListEmptyState/ >
                         </div>
                     </div>
                     

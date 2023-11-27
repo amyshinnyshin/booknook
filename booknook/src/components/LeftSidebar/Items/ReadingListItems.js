@@ -1,6 +1,6 @@
 import React from 'react'; 
 
-const LsReadingListItem = () => {
+const ReadingListItem = () => {
     return (
         <div className="rl-item">
             <div>
@@ -17,4 +17,4 @@ const LsReadingListItem = () => {
 
 
 
-export { LsReadingListItem }
+export { ReadingListItem }

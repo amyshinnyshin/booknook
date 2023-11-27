@@ -6,6 +6,18 @@
     align-items: center;
     border-radius: 32px;
     outline: 1px solid var(--boulder-600);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.search-input-container:hover {
+    background: white;
+    border: 1px solid var(--lucky-point-500);
+}
+
+.search-input-container:focus-within {
+    background: white;
+    border: 1px solid var(--lucky-point-500);
+    box-shadow: 0 0 4px var(--lucky-point-400); 
 }
 
 .search-input-group{
