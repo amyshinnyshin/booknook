@@ -25,6 +25,8 @@
 
 .bookmark-icon {
     display: none; 
+    z-index: 1;
+    opacity: .9;
 }
 
 .overlay {

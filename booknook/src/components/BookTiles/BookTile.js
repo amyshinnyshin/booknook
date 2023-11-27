@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import './BookTile.css';
 
 const BookTile = ({ title, author, image }) => {
@@ -13,7 +14,7 @@ const BookTile = ({ title, author, image }) => {
   return (
     <div className='book-tile-container'>
       <div className='top-section' style={backgroundImageStyle}>
-        <img className="icon-default-32px bookmark-icon" src="/assets/icons/bookmark-dark.png" alt=""></img>
+        <img className="icon-default-32px bookmark-icon" src="/assets/icons/bookmark-circle-outline.png" alt=""></img>
         <div className="overlay"></div>
       </div>
       <div className='bottom-section'>

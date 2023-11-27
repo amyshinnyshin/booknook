@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
+
 import SearchInput from './Inputs/Search';
 import BookTile from './BookTiles/BookTile';
 
 import './BrowsePage.css';
 
 const BrowsePage = () => {
-  const [query, setQuery] = useState('Hello');
+  const [query, setQuery] = useState('Death on the Nile');
   const [bookData, setBookData] = useState([]);
 
   useEffect(() => {
@@ -61,7 +63,7 @@ const BrowsePage = () => {
           >
             <BookTile
               title={book.title}
-              author={book.author_name && book.author_name[0]}
+              author={book.author_name ? book.author_name[0] : "Unknown Author"}
               image={
                 book.cover_i
                   ? `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`
