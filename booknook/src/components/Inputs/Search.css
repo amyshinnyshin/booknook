@@ -39,3 +39,10 @@
     font-weight: var(--font-weight-regular);
 }
 
+
+.dropdown-container {
+    padding-top: 8px;
+    position: absolute;
+    z-index: 1;
+    width: 320px;
+}

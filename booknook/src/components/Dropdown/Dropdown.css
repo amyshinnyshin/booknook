@@ -1,0 +1,37 @@
+@import url('../../App.css');
+
+.dropdown {
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    outline: 1px solid var(--boulder-100);
+    overflow: hidden;
+
+}
+p.dropdown-section-header {
+    font-size: 14px;
+    font-weight: var(--font-weight-bold);
+    color: var(--boulder-600);
+    margin: 0px;
+    padding: 16px 16px 8px 16px ;
+}
+ul.dropdown-list-group {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+li.dropdown-list-item {
+    font-family: 'Manrope';
+    padding: 4px 16px 4px 16px;
+    font-size: 16px;
+    line-height: 40px;
+    list-style-type: none;
+    color: var(--boulder-950);
+}
+
+li.dropdown-list-item:hover {
+    background-color: var(--boulder-100);
+}
+

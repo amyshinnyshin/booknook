@@ -1,6 +1,7 @@
+// BrowsePage.js
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
 
 import SearchInput from './Inputs/Search';
 import BookTile from './BookTiles/BookTile';
@@ -8,26 +9,41 @@ import BookTile from './BookTiles/BookTile';
 import './BrowsePage.css';
 
 const BrowsePage = () => {
-  const [query, setQuery] = useState('Death on the Nile');
+  const [query, setQuery] = useState('Harry Potter');
   const [bookData, setBookData] = useState([]);
 
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await fetch(`https://openlibrary.org/search.json?q=${query}`);
-        const data = await response.json();
-        setBookData(data.docs);
+        const titlesResponse = await fetch(
+          `https://openlibrary.org/search.json?title=${encodeURIComponent(query)}`
+        );
+        const titlesData = await titlesResponse.json();
+    
+        const authorsResponse = await fetch(
+          `https://openlibrary.org/search.json?author=${encodeURIComponent(query)}`
+        );
+        const authorsData = await authorsResponse.json();
+    
+        const combinedData = [...titlesData.docs, ...authorsData.docs];
+        
+        const uniqueCombinedData = Array.from(
+          new Map(combinedData.map((item) => [item.key, item])).values()
+        );
+    
+        setBookData(uniqueCombinedData);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
+    
 
     fetchBooks();
   }, [query]);
 
-  useEffect(() => {
-    setQuery('');
-  }, []);
+  const handleSearch = (newQuery) => {
+    setQuery(newQuery);
+  };
 
   const fetchBookDetails = async (bookKey) => {
     try {
@@ -44,18 +60,20 @@ const BrowsePage = () => {
     const parts = key.split('/');
     return parts[parts.length - 1];
   };
-  
 
   return (
-    <div className='browse-page-container'>
-      <div className='browse-header-container'>
+    <div className="browse-page-container">
+      <div className="browse-header-container">
         <h1>Browse</h1>
         <div>
-          <SearchInput value={query} onChange={(e) => setQuery(e.target.value)} />
+          <SearchInput 
+            onSearch={handleSearch}
+            placeholderText="Search for books..."
+            />
         </div>
       </div>
-      <div className='book-tiles-container'>
-        {bookData.slice(0, 24).map((book) => (
+      <div className="book-tiles-container">
+        {bookData.slice(0, 40).map((book) => (
           <Link
             to={`/browse/books/${extractBookId(book.key)}`}
             key={book.key}
@@ -78,4 +96,5 @@ const BrowsePage = () => {
 };
 
 export default BrowsePage;
+
 
