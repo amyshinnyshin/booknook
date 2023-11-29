@@ -18,7 +18,7 @@ function App() {
       <LeftSidebar />
       <div className="main-page-content-container">
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/home" element={<HomePage />} />
           <Route path="/browse" element={<BrowsePage />} />
 
           <Route path="/browse/books/:id" element={<BookDetailsPage />} />
