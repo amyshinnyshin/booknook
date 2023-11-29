@@ -10,7 +10,7 @@ const Breadcrumb = ({ previousPage, currentPage }) => {
 
   const handleGoBack = () => {
     if (window.history.length > 1) {
-      window.history.back();
+      window.location.href = '/browse';
     } else {
 
       console.log('No previous page available');

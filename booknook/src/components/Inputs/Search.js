@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Dropdown from '../Dropdown/Dropdown';
 import './Search.css';
 
-const SearchInput = ({ onSearch, onQueryChange, placeholderText, lastSearchedQuery }) => {
+const SearchInput = ({ onSearch, onQueryChange, placeholderText }) => {
   const [isFocused, setIsFocused] = useState(false);
   const [query, setQuery] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
@@ -25,7 +25,6 @@ const SearchInput = ({ onSearch, onQueryChange, placeholderText, lastSearchedQue
 
 
         setRecentSearches(prevSearches => [...prevSearches, query.trim()]);
-
         setShowDropdown(false);
       }
     }
@@ -33,6 +32,10 @@ const SearchInput = ({ onSearch, onQueryChange, placeholderText, lastSearchedQue
 
   const handleFocus = () => {
     setIsFocused(true);
+    if (query.trim() !== '') {
+      setQuery('');
+    }
+
     setShowDropdown(true);
   };
 
@@ -48,6 +51,8 @@ const SearchInput = ({ onSearch, onQueryChange, placeholderText, lastSearchedQue
     if (onSearch) {
       onSearch(selectedOption);
     }
+
+    setQuery('');
   };
 
   return (
@@ -64,7 +69,7 @@ const SearchInput = ({ onSearch, onQueryChange, placeholderText, lastSearchedQue
             onKeyDown={handleKeyDown}
             onFocus={handleFocus}
             onBlur={handleBlur}
-            onClick={() => setShowDropdown(true)} // Show dropdown when input is clicked
+            onClick={() => setShowDropdown(true)} 
           />
         </div>
       </div>

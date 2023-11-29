@@ -17,6 +17,7 @@
 .bd-book-details-container {
     overflow-y: auto;
     max-height: calc(100vh - 96px);
+    transition: scroll-top 0.5s ease-in-out; 
 }
 
 .bd-book-details {
@@ -89,7 +90,12 @@
 
 .more-book-tiles-container {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr)); /* Each column has equal width */
+    grid-template-columns: repeat(4, minmax(0, 1fr)); 
     gap: 24px;
     padding: 0px;
+}
+
+.scroll-top {
+    transition: scroll-top 0.5s ease-in-out; 
+    scroll-behavior: smooth;
 }

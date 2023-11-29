@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+
+
 import Breadcrumb from './Breadcrumbs/Breadcrumb';
 import { PrimaryButtonWithIcon } from './Buttons/Buttons';
 import BookTile from './BookTiles/BookTile';
@@ -9,11 +12,14 @@ import BookTile from './BookTiles/BookTile';
 import './BookDetailsPage.css';
 
 
+
 const BookDetailsPage = () => {
   const { id } = useParams();
   const [bookDetails, setBookDetails] = useState({});
   const [authorName, setAuthorName] = useState('Unknown Author');
   const [moreBooks, setMoreBooks] = useState([]);
+  const containerRef = useRef(null);
+  const history = createBrowserHistory();
     
   useEffect(() => {
     const fetchBookDetails = async () => {
@@ -51,10 +57,22 @@ const BookDetailsPage = () => {
     fetchBookDetails();
   }, [id]);
 
-
+  const extractBookId = (key) => {
+    const parts = key.split('/');
+    return parts[parts.length - 1];
+  };
+  
   const handleButtonClick = () => {
     console.log('Book added to reading list');
   };
+
+  const handleScrollToTop = () => {
+    if (containerRef.current) {
+      containerRef.current.classList.add('scroll-top'); // Apply the 'scroll-top' class
+      containerRef.current.scrollTop = 0;
+    }
+  };
+
 
   return (
     <div className='book-detail-page-container'>
@@ -62,7 +80,7 @@ const BookDetailsPage = () => {
         previousPage={'Browse'}
         currentPage={bookDetails.title}
       />
-      <div className='bd-book-details-container'>
+      <div className='bd-book-details-container' ref={containerRef}>
         <div className='bd-book-details'>
           <div className='bd-top-section'>
             <div className='book-image-container'>
@@ -94,14 +112,23 @@ const BookDetailsPage = () => {
           <div className='more-books-container'>
             <h4 className='page-section-header'>More Books from {authorName}</h4>
             <div className='more-book-tiles-container'>
-            {moreBooks.map((book) => (
-              <BookTile
+              {moreBooks.map((book) => (
+                <Link
+                to={`/browse/books/${extractBookId(book.key)}`}
                 key={book.key}
-                title={book.title}
-                author={authorName}
-                image={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
-              />
-            ))}
+                onClick={() => {
+                  history.push(`/browse/books/${extractBookId(book.key)}`);
+                  handleScrollToTop();
+                }}
+              >
+                  <BookTile
+                    key={book.key}
+                    title={book.title}
+                    author={authorName}
+                    image={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
+                  />
+                </Link>
+              ))}
             </div>
           </div>
         </div>
