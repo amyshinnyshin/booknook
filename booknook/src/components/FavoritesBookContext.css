@@ -1,0 +1,8 @@
+@import url('../../App.css');
+
+.browse-page-container {
+    display: flex;
+    flex-direction: column;
+    width: calc(100vw - 320px);
+    height: 100vh;
+}

@@ -63,7 +63,7 @@ const BrowsePage = () => {
 
   return (
     <div className="browse-page-container">
-      <div className="browse-header-container">
+      <div className="page-header-container">
         <h1>Browse</h1>
         <div>
           <SearchInput 

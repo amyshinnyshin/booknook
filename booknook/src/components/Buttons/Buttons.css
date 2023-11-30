@@ -25,7 +25,7 @@ button {
 }
 
 
-.secondary-button {
+.outline-button {
     display: flex;
     padding: 12px 24px;
     justify-content: center;
@@ -39,11 +39,30 @@ button {
     height: 48px;
 }
 
-.secondary-button:hover {
+.outline-button:hover {
     background: var(--quarter-spanish-white-100);
     border: 2px solid var(--boulder-950);
 }
 
+
+.outline-button-neutral {
+    display: flex;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-weight: var(--font-weight-extrabold);
+    border: none;
+    border-radius: 32px;
+    border: 1px solid var(--boulder-950);
+    background: none;
+    height: 48px;
+}
+
+.outline-button-neutral:hover {
+    background: var(--boulder-50);
+    border: 2px solid var(--boulder-950);
+}
 
 
 .icon-button {

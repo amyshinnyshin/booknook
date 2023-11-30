@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Buttons.css';
 
-const PrimaryButton = ({ text }) => {
+const PrimaryButton = ({ text, onClick }) => {
   return (
-    <button className="primary-button">
+    <button className="primary-button" onClick={onClick}>
       {text}
     </button>
   );
@@ -12,6 +12,7 @@ const PrimaryButton = ({ text }) => {
 
 PrimaryButton.propTypes = {
   text: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
 };
 
 const PrimaryButtonWithIcon = ({ text, icon, onClick }) => {
@@ -29,9 +30,10 @@ PrimaryButtonWithIcon.propTypes = {
   onClick: PropTypes.func, // Click handler function
 };
 
-const SecondaryButton = ({ text }) => {
+
+const SecondaryButton = ({ text, onClick }) => {
   return (
-    <button className="secondary-button">
+    <button className="secondary-button" onClick={onClick}>
       {text}
     </button>
   );
@@ -39,11 +41,12 @@ const SecondaryButton = ({ text }) => {
 
 SecondaryButton.propTypes = {
   text: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
 };
 
 const SecondaryButtonWithIcon = ({ text, icon, onClick }) => {
   return (
-    <button className="secondary-button" onClick={onClick}>
+    <button className="outline-button" onClick={onClick}>
       {icon && <img className="icon-default" src={icon} alt="Icon" />}
       {text}
     </button>
@@ -55,6 +58,67 @@ SecondaryButtonWithIcon.propTypes = {
   icon: PropTypes.string, // URL of the icon image
   onClick: PropTypes.func, // Click handler function
 };
+
+
+const OutlineButton = ({ text, onClick }) => {
+  return (
+    <button className="outline-button" onClick={onClick}>
+      {text}
+    </button>
+  );
+};
+
+OutlineButton.propTypes = {
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+};
+
+const OutlineButtonWithIcon = ({ text, icon, onClick }) => {
+  return (
+    <button className="outline-button" onClick={onClick}>
+      {icon && <img className="icon-default" src={icon} alt="Icon" />}
+      {text}
+    </button>
+  );
+};
+
+OutlineButtonWithIcon.propTypes = {
+  text: PropTypes.string.isRequired, 
+  icon: PropTypes.string, 
+  onClick: PropTypes.func, 
+};
+
+
+const OutlineButtonNeutral = ({ text, onClick }) => {
+  return (
+    <button className="outline-button-neutral" onClick={onClick}>
+      {text}
+    </button>
+  );
+};
+OutlineButtonNeutral.propTypes = {
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+};
+
+const OutlineButtonNeutralWithIcon = ({ text, icon, onClick }) => {
+  return (
+    <button className="outline-button-neutral" onClick={onClick}>
+      {icon && <img className="icon-default" src={icon} alt="Icon" />}
+      {text}
+    </button>
+  );
+};
+
+OutlineButtonNeutralWithIcon.propTypes = {
+  text: PropTypes.string.isRequired, // Text inside the button
+  icon: PropTypes.string, // URL of the icon image
+  onClick: PropTypes.func, // Click handler function
+};
+
+
+
+
 
 const TertiaryIconButton = ({ icon, onClick }) => {
   return (
@@ -72,6 +136,10 @@ TertiaryIconButton.propTypes = {
 export {
   PrimaryButton,
   PrimaryButtonWithIcon,
+  OutlineButton,
+  OutlineButtonWithIcon,
+  OutlineButtonNeutral,
+  OutlineButtonNeutralWithIcon,
   SecondaryButton,
   SecondaryButtonWithIcon,
   TertiaryIconButton

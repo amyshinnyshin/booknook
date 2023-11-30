@@ -18,6 +18,7 @@ const LeftSidebar = () => {
     const selectedRoute = routes.find(route => location.pathname.includes(route.path));
 
     const handleButtonClick = () => {
+        console.log('button clicked');
     };
 
     return (
@@ -32,6 +33,7 @@ const LeftSidebar = () => {
                     <nav className="ls-nav-items-container">
                         {routes.map(route => (
                             <NavItem
+                                key={route.id}
                                 to={route.path}
                                 icon={route.icon}
                                 text={route.text}

@@ -1,11 +1,11 @@
 import React from 'react'; 
-import { SecondaryButton } from '../../Buttons/Buttons';
+import { OutlineButton } from '../../Buttons/Buttons';
 import './ReadingListEmptyState.css';
 
 
 
 const handleButtonClick = () => {
-    
+    console.log('button clicked')
 };
 
 
@@ -17,7 +17,7 @@ const ReadingListEmptyState = () => {
                 <h6 className='card-header'>Create your first reading list</h6>
                 <p className='extra-small'>We’ll help you find the books you want to read. Its easy! </p>
             </div>
-            <SecondaryButton
+            <OutlineButton
                 text="Create a Reading List"
                 onClick={ handleButtonClick }
             />

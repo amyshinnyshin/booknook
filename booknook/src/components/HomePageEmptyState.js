@@ -1,25 +1,58 @@
-import React from 'react'; 
+// HomePageEmptyState.js
 
+import React, { useState } from 'react';
 import './HomePageEmptyState.css';
-import { SecondaryButton } from './Buttons/Buttons';
-
-const handleButtonClick = () => {
-    
-};
+import { OutlineButton } from './Buttons/Buttons';
+import Modal from './Modals/Modal';
 
 const HomePageEmptyState = () => {
-    return (
-<div className='rl-es-page-container'>
-    <div className='rl-es-page-copy'>
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalData, setModalData] = useState(null);
+
+  const handleButtonClick = () => {
+    console.log('Button clicked!');
+    const dataForModal = {
+      title: 'Create a Reading List',
+      content: 'This is the content of the modal.',
+      secondaryButtonText: 'Cancel',
+      primaryButtonText: 'Save',
+    };
+  
+    setModalData(dataForModal);
+    setIsModalOpen(true);
+  };
+  
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  return (
+    <div className='rl-es-page-container'>
+      <div className='rl-es-page-copy'>
         <img className='rl-empty-state-image' src='/assets/images/reading.png' alt='reading-list'></img>
         <h5 className='es-header'>Create your first reading list</h5>
         <p className='small'>Find the books you like to read next and add them to your list.</p>
-    </div>
-    <SecondaryButton
+      </div>
+      <OutlineButton
         text="Create a Reading List"
-        onClick={ handleButtonClick }
+        onClick={handleButtonClick}
+      />
+      {isModalOpen && modalData && (
+        <Modal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          modalHeader={modalData.title}
+          content={<p>{modalData.content}</p>}
+          primaryButtonText={modalData.primaryButtonText}
+          secondaryButtonText={modalData.secondaryButtonText}
+          secondaryOnClick={handleCloseModal} 
+          closeOnClick={handleCloseModal}
         />
-</div>
-    )};
+      )}
+    </div>
+  );
+};
 
 export default HomePageEmptyState;
+
