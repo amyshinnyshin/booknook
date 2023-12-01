@@ -95,7 +95,7 @@ const BookDetailsPage = () => {
               
               <PrimaryButtonWithIcon
                 text="Add to Reading List"
-                icon="/assets/icons/plus-white.png"
+                icon="/booknook/assets/icons/plus-white.png"
                 onClick={handleButtonClick}
               />
             </div>

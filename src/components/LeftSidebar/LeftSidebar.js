@@ -10,9 +10,9 @@ const LeftSidebar = () => {
 
 
     const routes = [
-        { id:'home', path: '/booknook/home', text: 'Home', icon: './assets/icons/house-chimney.png', expectedKeyword: 'home' },
-        { id:'browse', path: '/booknook/browse', text: 'Browse', icon: './assets/icons/books.png', expectedKeyword: 'browse' },
-        { id:'favorites', path: '/booknook/favorites', text: 'Favorites', icon: './assets/icons/bookmark.png', expectedKeyword: 'favorites' },
+        { id:'home', path: '/home', text: 'Home', icon: '/booknook/assets/icons/house-chimney.png', expectedKeyword: 'home' },
+        { id:'browse', path: '/browse', text: 'Browse', icon: '/booknook/assets/icons/books.png', expectedKeyword: 'browse' },
+        { id:'favorites', path: '/favorites', text: 'Favorites', icon: '/booknook/assets/icons/bookmark.png', expectedKeyword: 'favorites' },
     ];
 
     const selectedRoute = routes.find(route => location.pathname.includes(route.path));
@@ -25,7 +25,7 @@ const LeftSidebar = () => {
         <div id="ls-nav" className="left-sidebar">
             <div className="ls-nav-container">
                 <a className="logo-container" href="/home">
-                    <img className="booknook-logo" src="./assets/images/booknook-logo.png" alt="BookNook Logo" />
+                    <img className="booknook-logo" src="/booknook/assets/images/booknook-logo.png" alt="BookNook Logo" />
                     <h4 className="logo-header">BookNook</h4>
                 </a>
 
@@ -46,7 +46,7 @@ const LeftSidebar = () => {
                     <div className="reading-list-container">
                         <div className="rl-section-header">
                             <p className="section-name">READING LIST</p>
-                            <TertiaryIconButton icon="./assets/icons/plus.png" onClick={handleButtonClick} />
+                            <TertiaryIconButton icon="/booknook/assets/icons/plus.png" onClick={handleButtonClick} />
                         </div>
 
                         <div className="rl-item-container">

@@ -23,7 +23,7 @@ const Modal = ({
       <div className='modal-container'>
         <div className='modal-header-container'>
           <h4>{modalHeader}</h4>
-          <TertiaryIconButton icon="/assets/icons/xmark.png" onClick={closeOnClick}/>
+          <TertiaryIconButton icon="/booknook/assets/icons/xmark.png" onClick={closeOnClick}/>
         </div>
 
         <div className="modal-content-container">
