@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import './HomePageEmptyState.css';
 import { OutlineButton } from './Buttons/Buttons';
+
 import Modal from './Modals/Modal';
+import InputField from './Inputs/InputField';
+
 
 const HomePageEmptyState = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -25,7 +28,10 @@ const HomePageEmptyState = () => {
 
     return (
       <div>
-        <p>This is the custom content of the modal.</p>
+        <InputField 
+          type='text'
+          label='Name'
+        />
 
       </div>
     );

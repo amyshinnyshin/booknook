@@ -40,8 +40,8 @@ button {
 }
 
 .outline-button:hover {
-    background: var(--quarter-spanish-white-100);
-    border: 2px solid var(--boulder-950);
+    background: var(--quarter-spanish-white-200);
+    /* border: 2px solid var(--boulder-950); */
 }
 
 
@@ -60,8 +60,8 @@ button {
 }
 
 .outline-button-neutral:hover {
-    background: var(--boulder-50);
-    border: 2px solid var(--boulder-950);
+    background: var(--boulder-100);
+    /* border: 2px solid var(--boulder-950); */
 }
 
 

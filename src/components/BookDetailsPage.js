@@ -88,7 +88,7 @@ const BookDetailsPage = () => {
             </div>
             <div className='bd-right-section'>
               <div className='bd-header-group'>
-                <p className='bd-genre'>NON-FICTION</p>
+                <p className='bd-genre'>GENRE</p>
                 <h1 className="bd-book-name">{bookDetails.title}</h1>
                 <h4 className='bd-author'>{authorName}</h4>
               </div>
