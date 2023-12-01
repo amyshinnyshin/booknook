@@ -9,12 +9,7 @@ const Breadcrumb = ({ previousPage, currentPage }) => {
   };
 
   const handleGoBack = () => {
-    if (window.history.length > 1) {
-      window.location.href = '/booknook/browse';
-    } else {
-
-      console.log('No previous page available');
-    }
+    window.location.href = '/booknook/browse';
   };
   
 
