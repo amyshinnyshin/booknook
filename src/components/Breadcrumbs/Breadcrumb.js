@@ -1,17 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 import './Breadcrumb.css';
 
 const Breadcrumb = ({ previousPage, currentPage }) => {
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate('/browse');
+  };
+
   const handlePageRefresh = () => {
     window.location.reload();
   };
-
-  const handleGoBack = () => {
-    window.location.href = '/booknook/browse';
-  };
-  
 
   return (
     <div className='breadcrumb-container'>
@@ -29,9 +31,12 @@ const Breadcrumb = ({ previousPage, currentPage }) => {
 };
 
 Breadcrumb.propTypes = {
-    previousPage: PropTypes.string,
-    currentPage: PropTypes.string,
+  previousPage: PropTypes.string,
+  currentPage: PropTypes.string,
 };
 
 export default Breadcrumb;
+
+
+
 
