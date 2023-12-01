@@ -10,7 +10,9 @@ Discover the joy of reading with BookNook, your go-to app for exploring the worl
 
 # User Stories 
 As a user, I want to be able to browse different types of books so that I can select one to read its summary.  
+
 As a user, I want to be able to search books based on titles so that I can find the specific book I want. 
+
 As a user, I want to be able to select a book and read its summaries so I can know if I want to bookmark or add them to a read list to read later. 
 
 ---- This a stretch goal
