@@ -15,10 +15,10 @@ function App() {
         <LeftSidebar />
         <div className="main-page-content-container">
           <Routes>
-            <Route path="/home" element={<HomePage />} />
-            <Route path="/browse" element={<BrowsePage />} />
-            <Route path="/browse/books/:id" element={<BookDetailsPage />} />
-            <Route path="/favorites" element={<FavoritesPage />} />
+            <Route path="/booknook/home" element={<HomePage />} />
+            <Route path="/booknook/browse" element={<BrowsePage />} />
+            <Route path="/booknook/browse/books/:id" element={<BookDetailsPage />} />
+            <Route path="/booknook/favorites" element={<FavoritesPage />} />
           </Routes>
         </div>
       </FavoriteBooksProvider>
