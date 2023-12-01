@@ -9,7 +9,6 @@ const handleButtonClick = () => {
 };
 
 
-
 const ReadingListEmptyState = () => {
     return (
         <div className="rl-emptystate">
