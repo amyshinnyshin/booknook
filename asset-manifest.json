@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/booknook/static/css/main.26f71ab6.css",
-    "main.js": "/booknook/static/js/main.0f084c49.js",
+    "main.js": "/booknook/static/js/main.f842966e.js",
     "static/js/787.9eb4c9fc.chunk.js": "/booknook/static/js/787.9eb4c9fc.chunk.js",
     "index.html": "/booknook/index.html",
     "main.26f71ab6.css.map": "/booknook/static/css/main.26f71ab6.css.map",
-    "main.0f084c49.js.map": "/booknook/static/js/main.0f084c49.js.map",
+    "main.f842966e.js.map": "/booknook/static/js/main.f842966e.js.map",
     "787.9eb4c9fc.chunk.js.map": "/booknook/static/js/787.9eb4c9fc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.26f71ab6.css",
-    "static/js/main.0f084c49.js"
+    "static/js/main.f842966e.js"
   ]
 }
