@@ -1,5 +1,3 @@
-// HomePageEmptyState.js
-
 import React, { useState } from 'react';
 import './HomePageEmptyState.css';
 import { OutlineButton } from './Buttons/Buttons';
@@ -13,15 +11,25 @@ const HomePageEmptyState = () => {
     console.log('Button clicked!');
     const dataForModal = {
       title: 'Create a Reading List',
-      content: 'This is the content of the modal.',
+
+      content: <ModalContent />,
       secondaryButtonText: 'Cancel',
       primaryButtonText: 'Save',
     };
-  
+
     setModalData(dataForModal);
     setIsModalOpen(true);
   };
-  
+
+  const ModalContent = () => {
+
+    return (
+      <div>
+        <p>This is the custom content of the modal.</p>
+
+      </div>
+    );
+  };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
@@ -43,7 +51,7 @@ const HomePageEmptyState = () => {
           isOpen={isModalOpen}
           onClose={handleCloseModal}
           modalHeader={modalData.title}
-          content={<p>{modalData.content}</p>}
+          content={modalData.content}
           primaryButtonText={modalData.primaryButtonText}
           secondaryButtonText={modalData.secondaryButtonText}
           secondaryOnClick={handleCloseModal} 
@@ -55,4 +63,5 @@ const HomePageEmptyState = () => {
 };
 
 export default HomePageEmptyState;
+
 

@@ -8,7 +8,7 @@ const BookTile = ({ title, author, image, id }) => {
   const { favoriteBooks, toggleFavorite } = useFavoriteBooks();
   const isBookFavorite = favoriteBooks.some((book) => book.id === id);
 
-  const [isFavorite, setFavorite] = useState(isBookFavorite);
+  const [isFavorite, setIsFavorite] = useState(isBookFavorite);
 
   const backgroundImageStyle = {
     backgroundImage: image ? `url(${image})` : 'none',
@@ -19,7 +19,7 @@ const BookTile = ({ title, author, image, id }) => {
 
   const handleClick = (event) => {
     event.preventDefault();
-    setFavorite(!isFavorite);
+    setIsFavorite(!isFavorite);
     toggleFavorite({ id, title, author, image });
   };
 
@@ -51,14 +51,13 @@ const BookTile = ({ title, author, image, id }) => {
 };
 
 BookTile.propTypes = {
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   image: PropTypes.string,
-  id: PropTypes.string.isRequired,
 };
 
 export default BookTile;
-
 
 
 

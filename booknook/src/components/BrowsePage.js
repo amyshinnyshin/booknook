@@ -1,5 +1,3 @@
-// BrowsePage.js
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -11,6 +9,7 @@ import './BrowsePage.css';
 const BrowsePage = () => {
   const [query, setQuery] = useState('Harry Potter');
   const [bookData, setBookData] = useState([]);
+  const [favoriteBooks, setFavoriteBooks] = useState([]);
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -36,13 +35,21 @@ const BrowsePage = () => {
         console.error('Error fetching data:', error);
       }
     };
-    
 
     fetchBooks();
   }, [query]);
 
   const handleSearch = (newQuery) => {
     setQuery(newQuery);
+  };
+
+  const toggleFavorite = (book) => {
+    const isBookFavorite = favoriteBooks.some((b) => b.id === book.id);
+    if (isBookFavorite) {
+      setFavoriteBooks(favoriteBooks.filter((b) => b.id !== book.id));
+    } else {
+      setFavoriteBooks([...favoriteBooks, book]);
+    }
   };
 
   const fetchBookDetails = async (bookKey) => {
@@ -66,10 +73,7 @@ const BrowsePage = () => {
       <div className="page-header-container">
         <h1>Browse</h1>
         <div>
-          <SearchInput 
-            onSearch={handleSearch}
-            placeholderText="Search for books..."
-            />
+          <SearchInput onSearch={handleSearch} placeholderText="Search for books..." />
         </div>
       </div>
       <div className="book-tiles-container">
@@ -80,6 +84,8 @@ const BrowsePage = () => {
             onClick={() => fetchBookDetails(book.key)}
           >
             <BookTile
+              id = {book.id}
+              key={book.key}
               title={book.title}
               author={book.author_name ? book.author_name[0] : "Unknown Author"}
               image={
@@ -87,6 +93,8 @@ const BrowsePage = () => {
                   ? `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`
                   : undefined 
               }
+              isFavorite={favoriteBooks.some((b) => b.id === book.id)}
+              toggleFavorite={() => toggleFavorite({ id: book.id, title: book.title, author: book.author_name[0] })}
             />
           </Link>
         ))}
@@ -96,5 +104,4 @@ const BrowsePage = () => {
 };
 
 export default BrowsePage;
-
 

@@ -1,4 +1,3 @@
-// FavoritesPage.js
 import React from 'react';
 
 import { useFavoriteBooks } from './FavoritesBookContext';
