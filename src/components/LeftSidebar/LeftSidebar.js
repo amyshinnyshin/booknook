@@ -10,8 +10,8 @@ const LeftSidebar = () => {
 
 
     const routes = [
-        { id:'home', path: '/home', text: 'Home', icon: '/assets/icons/house-chimney.png', expectedKeyword: 'home' },
-        { id:'browse', path: '/browse', text: 'Browse', icon: '/assets/icons/books.png', expectedKeyword: 'browse' },
+        { id:'home', path: '/', text: 'Home', icon: '/assets/icons/house-chimney.png', expectedKeyword: 'home' },
+        { id:'browse', path: '/booknook/browse', text: 'Browse', icon: '/assets/icons/books.png', expectedKeyword: 'browse' },
         { id:'favorites', path: '/favorites', text: 'Favorites', icon: '/assets/icons/bookmark.png', expectedKeyword: 'favorites' },
     ];
 
