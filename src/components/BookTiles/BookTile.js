@@ -29,7 +29,7 @@ const BookTile = ({ title, author, image, id }) => {
         <Tooltip text={isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}>
           <img
             className="icon-default-32px bookmark-icon"
-            src={isFavorite ? "/assets/icons/bookmark-circle-red.png" : "/assets/icons/bookmark-circle-outline.png"}
+            src={isFavorite ? "./assets/icons/bookmark-circle-red.png" : "./assets/icons/bookmark-circle-outline.png"}
             alt={isFavorite ? "Bookmarked" : "Unbookmarked"}
             onClick={handleClick}
           />

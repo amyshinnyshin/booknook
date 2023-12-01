@@ -38,7 +38,7 @@ const HomePageEmptyState = () => {
   return (
     <div className='rl-es-page-container'>
       <div className='rl-es-page-copy'>
-        <img className='rl-empty-state-image' src='/assets/images/reading.png' alt='reading-list'></img>
+        <img className='rl-empty-state-image' src='./assets/images/reading.png' alt='reading-list'></img>
         <h5 className='es-header'>Create your first reading list</h5>
         <p className='small'>Find the books you like to read next and add them to your list.</p>
       </div>
