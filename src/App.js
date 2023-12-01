@@ -14,18 +14,18 @@ function NotFoundPage() {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/booknook">
       <FavoriteBooksProvider>
         <LeftSidebar />
         <div className="main-page-content-container">
           <Routes>
             {/* Redirect root path to "/booknook/home" */}
-            <Route path="/" element={<Navigate to="/booknook/home" replace />} />
+            <Route path="/" element={<Navigate to="/home" replace />} />
             
-            <Route path="/booknook/home" element={<HomePage />} />
-            <Route path="/booknook/browse" element={<BrowsePage />} />
-            <Route path="/booknook/browse/books/:id" element={<BookDetailsPage />} />
-            <Route path="/booknook/favorites" element={<FavoritesPage />} />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/browse" element={<BrowsePage />} />
+            <Route path="/browse/books/:id" element={<BookDetailsPage />} />
+            <Route path="/favorites" element={<FavoritesPage />} />
 
             {/* Catch-all route for 404 errors */}
             <Route path="/*" element={<NotFoundPage />} />
