@@ -10,9 +10,9 @@ const LeftSidebar = () => {
 
 
     const routes = [
-        { id:'home', path: '/home', text: 'Home', icon: '/booknook/assets/icons/house-chimney.png', expectedKeyword: 'home' },
-        { id:'browse', path: '/browse', text: 'Browse', icon: '/booknook/assets/icons/books.png', expectedKeyword: 'browse' },
-        { id:'favorites', path: '/favorites', text: 'Favorites', icon: '/booknook/assets/icons/bookmark.png', expectedKeyword: 'favorites' },
+        { id:'home', path: '/booknook/home', text: 'Home', icon: '/booknook/assets/icons/house-chimney.png', expectedKeyword: 'home' },
+        { id:'browse', path: '/booknook/browse', text: 'Browse', icon: '/booknook/assets/icons/books.png', expectedKeyword: 'browse' },
+        { id:'favorites', path: '/booknook/favorites', text: 'Favorites', icon: '/booknook/assets/icons/bookmark.png', expectedKeyword: 'favorites' },
     ];
 
     const selectedRoute = routes.find(route => location.pathname.includes(route.path));

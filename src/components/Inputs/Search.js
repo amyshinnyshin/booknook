@@ -59,7 +59,7 @@ const SearchInput = ({ onSearch, onQueryChange, placeholderText }) => {
     <div className='search-input-and-dropdown-container'>
       <div className="search-input-container">
         <div className={`search-input-group ${isFocused ? 'focused' : ''}`}>
-          <img className="icon-default" src="booknook/assets/icons/magnifying-glass.png" alt="" />
+          <img className="icon-default" src="/booknook/assets/icons/magnifying-glass.png" alt="" />
           <input
             className="search-input"
             type="text"
