@@ -24,7 +24,7 @@ const LeftSidebar = () => {
     return (
         <div id="ls-nav" className="left-sidebar">
             <div className="ls-nav-container">
-                <Link className="logo-container" to='/booknook/home'>
+                <Link className="logo-container" to='/home'>
                     <img className="booknook-logo" src="/booknook/assets/images/booknook-logo.png" alt="BookNook Logo" />
                     <h4 className="logo-header">BookNook</h4>
                 </Link>
