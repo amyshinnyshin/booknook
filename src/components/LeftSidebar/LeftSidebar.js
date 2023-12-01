@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import './LeftSidebar.css';
 import { TertiaryIconButton } from '../Buttons/Buttons';
 import NavItem from './Items/NavItem';
@@ -24,10 +24,10 @@ const LeftSidebar = () => {
     return (
         <div id="ls-nav" className="left-sidebar">
             <div className="ls-nav-container">
-                <a className="logo-container" href="/booknook/home">
+                <Link className="logo-container" to="/home">
                     <img className="booknook-logo" src="/booknook/assets/images/booknook-logo.png" alt="BookNook Logo" />
                     <h4 className="logo-header">BookNook</h4>
-                </a>
+                </Link>
 
                 <div className="ls-nav-and-rl-container">
                     <nav className="ls-nav-items-container">
